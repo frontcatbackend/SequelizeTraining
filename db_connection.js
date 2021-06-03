@@ -64,9 +64,9 @@ connect.sync({force:true}).then(()=> {
 })
 
 
-module.exports = {
-    connect,
-     Actor,
-     Film
-    }
+// module.exports = {
+//     connect,
+//      Actor,
+//      Film
+//     }
 
