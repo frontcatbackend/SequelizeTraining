@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "db":"nodemon db_connection",
-   "seq":"nodemon db_con"
+   "db":"nodemon seq_connection"
+   
   },
   "keywords": [],
   "author": "",
