@@ -35,9 +35,17 @@ const run_db = async () => {
     await robertHammond.addFilm([terminator2])
     await sylvesterStallone.addFilm([rembo, rembo2])
 
+    await terminator1.addActor([arnoldShwarznegger])
+    await terminator2.addActor([arnoldShwarznegger, robertHammond])
+    await rembo.addActor([sylvesterStallone])
+    await rembo2.addActor([sylvesterStallone])
+
 //calling 
     const actors = await Actor.findAll({include:[Film]})
     actors.forEach(actor => console.log(actor.toJSON()))
+
+    const films = await Film.findAll({include:[Actor]})
+    films.forEach(film => console.log(film.toJSON()))
 }
 
 sequelize_connect.sync({force: true}).then(() => {
