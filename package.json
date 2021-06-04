@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "db":"nodemon seq_connection"
+   "many_to_many":"nodemon seq_many_to_many",
+   "one_to_many":"nodemon seq_one_to_many",
+   "one_to_one":"nodemon seq_one_to_one"
    
   },
   "keywords": [],
