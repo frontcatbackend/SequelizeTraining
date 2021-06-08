@@ -21,23 +21,26 @@ const run = async () => {
   const andrew = await User.create({ user_name: "Andrew" });
   const twitter = await Account.create({ account_name: "Twitter" });
 
-//  await twitter.getUser();
- await twitter.setUser(andrew);
-//  await andrew.getAccount();
- await andrew.setAccount(twitter);
+  await twitter.setUser(andrew);
+  await andrew.setAccount(twitter);
 
-  const getAccounts = async () => {
-    const user = await User.findAll({ include: [{ model: Account }] });
-    console.log(await twitter.setUser(andrew));
-  };
-//   const getUsers = async () => {
-//     const account = await Account.findAll({ include: [{ model: User }] });
-//     console.log(account[0]);
-//   };
-  getAccounts();
-//   getUsers();
-//   console.log((await twitter.setUser(andrew)))
-//   console.log((await andrew.setAccount(twitter)))
+  const accountUser = await Account.findAll({include:[{model:User}]})
+  console.log(accountUser[0].toJSON())
+
+  //   const getAccounts = async () => {
+  //     const user = await User.findAll({ include: [{ model: Account }] });
+  //     console.log(user[0].toJson());
+  //   };
+  //   const getUsers = async () => {
+  //     const account = await Account.findAll({ include: [{ model: User }] });
+  //     console.log(account[0].toJson);
+  //   };
+  //   getAccounts();
+  //   getUsers();
+  //   console.log((await twitter.setUser(andrew)))
+  //   console.log((await twitter.getUser({include:[{model: Account}]})))
+//   console.log(
+//    
 };
 
 sequelize_connect.sync({ force: true }).then(() => {
