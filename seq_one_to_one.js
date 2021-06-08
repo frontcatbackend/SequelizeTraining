@@ -27,6 +27,9 @@ const run = async () => {
   const accountUser = await Account.findAll({include:[{model:User}]})
   console.log(accountUser[0].toJSON())
 
+  const userAccount = await User.findAll({include: [{model:Account}]})
+  console.log(userAccount[0].toJSON())
+
   //   const getAccounts = async () => {
   //     const user = await User.findAll({ include: [{ model: Account }] });
   //     console.log(user[0].toJson());
